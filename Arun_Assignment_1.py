@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 #Plotting sine and cosine with Matplotlib and Python
-def plotsincos(st,sp,in):
-    x = np.arange(st, sp * np.pi, in)
+def plotsincos(st,sp,ic):
+    x = np.arange(st, sp * np.pi, ic)
     y = np.sin(x)
     z = np.cos(x)
 
