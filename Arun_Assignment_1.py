@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
-#Plotting sine and cosine with Matplotlib and Python
-def plotsincos(st,sp,ic):
+
+# Plotting sine and cosine with Matplotlib and Python
+def plotsincos(st, sp, ic):
     x = np.arange(st, sp * np.pi, ic)
     y = np.sin(x)
     z = np.cos(x)
@@ -13,4 +14,5 @@ def plotsincos(st,sp,ic):
     plt.legend(["sin(x)", "cos(x)"])  # legend entries as seperate strings in a list
     plt.show()
 
-plotsincos(0,4,0.1)
+
+plotsincos(0, 4, 0.1)
