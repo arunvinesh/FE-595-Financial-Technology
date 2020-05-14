@@ -14,5 +14,16 @@ for filename in all_files:
 
 frame = pd.concat(li, axis=0, ignore_index=True)
 
-print(frame, file=f)
+frame = frame.reset_index()
+frame.drop("index", axis=True, inplace=True)
+frame.drop_duplicates(subset="Name")
 
+
+result = []
+for row in frame["Purpose"]:
+    pol_score = SIA().polarity_scores(row)
+    pol_score["Purpose"] = row
+    result.append(pol_score)
+
+frame["Score"] = pd.DataFrame(result)["compound"]
+df = frame.sort_values(by="Score", ascending=False)
